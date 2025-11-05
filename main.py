@@ -91,13 +91,15 @@ async def send_slide(chat_id):
     remainder = text[1024:]
 
     async with ChatActionSender.upload_photo(bot=bot, chat_id=chat_id):
-        await bot.send_photo(chat_id, photo, caption=caption)
+        # Кнопка прикріплена до першого повідомлення (с фото)
+        await bot.send_photo(chat_id, photo, caption=caption, reply_markup=markup)
 
-    # если текст длиннее — отправляем остаток
+    # Если текст длиннее — отправляем остаток (без кнопки)
     if remainder:
-        await bot.send_message(chat_id, remainder, reply_markup=markup)
+        await bot.send_message(chat_id, remainder)
 
     logging.info(f"Отправлен слайд пользователю {chat_id}")
+
 
 # --- /stats ---
 @dp.message(Command("stats"))
