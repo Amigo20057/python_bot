@@ -61,7 +61,7 @@ Ich erzähle Ihnen gerne mehr über meine Arbeitsmethode 💼 und über die Pers
 
 🔗Link zur Gruppe:  https://t.me/trading_germany
 
-✉️Mir eine private Nachricht schreiben:  @christoph_crypto''',
+✉️Mir eine private Nachricht schreiben: @christoph_crypto''',
         "button_text": "🔗 Weiter",
         "url": "https://t.me/trading_germany"
     }
