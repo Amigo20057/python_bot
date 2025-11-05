@@ -54,7 +54,7 @@ Vielen Kunden, die finanzielle Probleme hatten, konnte ich bereits helfen 💪, 
 Ich biete keine übernatürlichen Investitionen an ✋ – ich biete nur eine gute, solide Einkommensmöglichkeit 💼💰</b>
 
 
-Wenn Sie interessiert sind, freue ich mich sehr, Sie in meinem \n <b>Telegram-Kanal</b> zu begrüßen. 
+Wenn Sie interessiert sind, freue ich mich sehr, Sie in meinem <b>Telegram-Kanal</b> zu begrüßen. 
 Ich habe viele zufriedene Kunden und zahlreiche positive Bewertungen ⭐️
 Sie können also ganz sicher sein – ich schätze jeden einzelnen meiner Kunden sehr.
 Und wenn Sie mehr erfahren möchten, schreiben Sie mir einfach eine private Nachricht ✉️
