@@ -7,6 +7,7 @@ from aiogram.filters import Command
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, FSInputFile
 from aiogram.client.default import DefaultBotProperties
 from aiogram.utils.chat_action import ChatActionSender
+from dotenv import load_dotenv
 
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
@@ -24,6 +25,7 @@ logging.basicConfig(
 )
 
 # --- Конфигурация ---
+load_dotenv()  # загружаем переменные окружения из .env файла
 API_TOKEN = os.getenv("BOT_TOKEN")  # безопаснее, чем писать токен прямо в код
 ADMIN_ID = 7998228068                # твой Telegram ID
 
@@ -81,13 +83,20 @@ async def send_slide(chat_id):
         inline_keyboard=[[InlineKeyboardButton(text=slide["button_text"], url=slide["url"])]]
     )
 
+    text = slide["text"]
+    photo = FSInputFile(slide["photo"])
+
+    # caption максимум 1024 символа
+    caption = text[:1024]
+    remainder = text[1024:]
+
     async with ChatActionSender.upload_photo(bot=bot, chat_id=chat_id):
-        await bot.send_photo(
-            chat_id,
-            FSInputFile(slide["photo"]),
-            caption=slide["text"],
-            reply_markup=markup
-        )
+        await bot.send_photo(chat_id, photo, caption=caption)
+
+    # если текст длиннее — отправляем остаток
+    if remainder:
+        await bot.send_message(chat_id, remainder, reply_markup=markup)
+
     logging.info(f"Отправлен слайд пользователю {chat_id}")
 
 # --- /stats ---
