@@ -57,13 +57,11 @@ Wenn Sie interessiert sind, freue ich mich sehr, Sie in meinem Telegram-Kanal zu
 Ich habe viele zufriedene Kunden und zahlreiche positive Bewertungen ⭐️
 Sie können also ganz sicher sein – ich schätze jeden einzelnen meiner Kunden sehr.
 Und wenn Sie mehr erfahren möchten, schreiben Sie mir einfach eine private Nachricht ✉️
-Ich erzähle Ihnen gerne mehr über meine Arbeitsmethode 💼 und über die Perspektiven dieses Projekts 🚀
-
-🔗Link zur Gruppe:  https://t.me/trading_germany
-
-✉️Mir eine private Nachricht schreiben: @christoph_crypto''',
-        "button_text": "🔗 Weiter",
-        "url": "https://t.me/trading_germany"
+Ich erzähle Ihnen gerne mehr über meine Arbeitsmethode 💼 und über die Perspektiven dieses Projekts 🚀''',
+        "buttons": [
+            {"text": "🔗 Link zur Gruppe", "url": "https://t.me/trading_germany"},
+            {"text": "✉️ Mir eine private Nachricht schreiben", "url": "https://t.me/christoph_crypto"}
+        ]
     }
 ]
 
@@ -79,22 +77,23 @@ async def start(message: types.Message):
 # --- Отправка слайда ---
 async def send_slide(chat_id):
     slide = SLIDES[0]
-    markup = InlineKeyboardMarkup(
-        inline_keyboard=[[InlineKeyboardButton(text=slide["button_text"], url=slide["url"])]]
-    )
+    
+    # Создаём кнопки из списка
+    buttons = [
+        [InlineKeyboardButton(text=btn["text"], url=btn["url"])]
+        for btn in slide["buttons"]
+    ]
+    markup = InlineKeyboardMarkup(inline_keyboard=buttons)
 
     text = slide["text"]
     photo = FSInputFile(slide["photo"])
 
-    # caption максимум 1024 символа
     caption = text[:1024]
     remainder = text[1024:]
 
     async with ChatActionSender.upload_photo(bot=bot, chat_id=chat_id):
-        # Кнопка прикріплена до першого повідомлення (с фото)
         await bot.send_photo(chat_id, photo, caption=caption, reply_markup=markup)
 
-    # Если текст длиннее — отправляем остаток (без кнопки)
     if remainder:
         await bot.send_message(chat_id, remainder)
 
