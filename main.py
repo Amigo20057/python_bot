@@ -47,17 +47,18 @@ class PushStates(StatesGroup):
 SLIDES = [
     {
         "photo": "photos/foto.jpg",
-        "text": '''Guten Tag! Mein Name ist Christoph, und ich freue mich sehr, Sie kennenzulernen. 
+        "text": '''<b>Guten Tag! Mein Name ist Christoph, und ich freue mich sehr, Sie kennenzulernen. 
 Ich bin ein Trader mit umfangreicher Erfahrung 📊 und habe derzeit viele vielversprechende Projekte 🚀
 Ich freue mich, dass gerade Sie hier auf meinem Kanal gelandet sind! 
 Vielen Kunden, die finanzielle Probleme hatten, konnte ich bereits helfen 💪, sie zu lösen und so ihr Traumziel zu erreichen 🌟
-Ich biete keine übernatürlichen Investitionen an ✋ – ich biete nur eine gute, solide Einkommensmöglichkeit 💼💰
+Ich biete keine übernatürlichen Investitionen an ✋ – ich biete nur eine gute, solide Einkommensmöglichkeit 💼💰</b>
 
-Wenn Sie interessiert sind, freue ich mich sehr, Sie in meinem Telegram-Kanal zu begrüßen. 
+
+Wenn Sie interessiert sind, freue ich mich sehr, Sie in meinem \n <b>Telegram-Kanal</b> zu begrüßen. 
 Ich habe viele zufriedene Kunden und zahlreiche positive Bewertungen ⭐️
 Sie können also ganz sicher sein – ich schätze jeden einzelnen meiner Kunden sehr.
 Und wenn Sie mehr erfahren möchten, schreiben Sie mir einfach eine private Nachricht ✉️
-Ich erzähle Ihnen gerne mehr über meine Arbeitsmethode 💼 und über die Perspektiven dieses Projekts 🚀''',
+Ich erzähle Ihnen gerne mehr über meine Arbeitsmethode 💼 und über die <b>Perspektiven dieses Projekts</b> 🚀''',
         "buttons": [
             {"text": "🔗 Link zur Gruppe", "url": "https://t.me/trading_germany"},
             {"text": "✉️ Mir eine private Nachricht schreiben", "url": "https://t.me/christoph_crypto"}
